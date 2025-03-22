@@ -16,18 +16,20 @@ export default function ChatBox({contents}: {contents: string} ) {
     }
 
     return (
-        <div className="ChatBox">
-            {contents}
-            
-          <div>
-            {messages.map(m => (
-              <ChatBubble key={m.id} source={m.source} text={m.text}></ChatBubble>
-            ))}
-          </div>
+        <div className="h-full">
+            <div className="ChatBox">
+                {contents}
+                
+              <div>
+                {messages.map(m => (
+                  <ChatBubble key={m.id} source={m.source} text={m.text}></ChatBubble>
+                ))}
+              </div>
+            </div>
             <div>
-                <input value={message} onChange={e => setMessage(e.target.value)}></input>
-                <button onClick={onClickHandler}>Send</button>
-                <button onClick={() => {
+                <input className="my-font-dark" value={message} onChange={e => setMessage(e.target.value)}></input>
+                <button className="btn" onClick={onClickHandler}>Send</button>
+                <button hidden={true} onClick={() => {
                     setMessages([...messages, {id: nextId++, text: message, source: 'Server' }]);
 
                 }}>Send Server</button>
