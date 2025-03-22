@@ -3,25 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.Main {
+    @apply flex min-h-screen h-screen flex-col
+    items-center justify-between p-24
+}
+
+.ChatBox {
+    @apply
+    overflow-y-scroll overscroll-contain
+    w-1/2 h-full
+    border-solid border-2 border-gray-500 rounded-lg p-12
+    shadow-md
+    bg-slate-900
+    text-slate-600
+    subpixel-antialiased
+    font-serif
+    font-medium
+    text-left
+    text-lg
+}
+
+.ChatBubble {
+    @apply
+    flex-auto
+    border-solid border-2 border-gray-500 rounded-lg p-1
+    shadow-md
+    bg-white
+    text-slate-900
+    subpixel-antialiased
+    font-serif
+    font-medium
+    text-right
+    text-lg
+    whitespace-pre-line
+    justify-end
 }
