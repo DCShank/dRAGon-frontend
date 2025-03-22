@@ -43,12 +43,12 @@ body {
     text-lg
 }
 
-.ChatBubble {
+.ClientChatBubble {
     @apply
     flex-auto
     border-solid border-2 border-gray-500 rounded-lg p-1
     shadow-md
-    bg-white
+    bg-lime-100
     text-slate-900
     subpixel-antialiased
     font-serif
@@ -57,4 +57,19 @@ body {
     text-lg
     whitespace-pre-line
     justify-end
+}
+.ServerChatBubble {
+    @apply
+    flex-auto
+    border-solid border-2 border-gray-500 rounded-lg p-1
+    shadow-md
+    bg-amber-100
+    text-slate-900
+    subpixel-antialiased
+    font-serif
+    font-medium
+    text-left
+    text-lg
+    whitespace-pre-line
+    justify-start
 }
