@@ -1,13 +1,19 @@
-import Image from "next/image";
-import Link from "next/link";
-import Button from "./button";
+import "./globals.css"
+import ChatBox from "./chatbox";
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-                <Button />
+
+        <div className="main">
+            <div className="w-1/5"/>
+            <div className="w-3/5">
+                <div className="h-16"/>
+                <div className="h-2/3">
+                  <ChatBox contents=""/>
+                </div>
+                <div className="h-1/6"/>
             </div>
-        </main>
+            <div className="w-1/5"/>
+        </div>
     );
 }

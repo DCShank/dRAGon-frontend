@@ -3,25 +3,108 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 123, 123, 123;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    @apply
+    background-color
+}
+
+.my-font {
+    @apply
+    font-serif
+    font-medium
+    text-lg
+    subpixel-antialiased
+    whitespace-pre-line
+}
+
+.my-font-light {
+    @apply
+    my-font
+    text-slate-50
+}
+
+.my-font-dark {
+    @apply
+    my-font
+    text-slate-900
+}
+
+.foreground-colors {
+
+}
+
+.background-color {
+    @apply
+    bg-slate-900
+}
+
+.foreground-object {
+    @apply
+    border-solid border-2 border-black rounded-lg p-2
+    shadow-md
+    shadow-black
+}
+
+.main {
+    @apply flex
+    background-color
+    w-full
+    h-screen
+    mb-4
+}
+
+.btn {
+    @apply
+    my-font-light
+    font-bold
+    bg-sky-600
+    hover:bg-sky-800
+    py-2 px-4
+    border
+    border-slate-900
+    rounded
+}
+
+.ChatBox {
+    @apply
+    background-color
+    my-font-light
+    foreground-object
+    h-full
+    w-full
+    overflow-y-scroll overscroll-contain
+    text-left
+}
+
+.ClientChatBubble {
+    @apply
+    my-font-light
+    foreground-object
+    flex-auto
+    bg-sky-600
+    text-right
+    justify-end
+}
+
+.ServerChatBubble {
+    @apply
+    my-font-light
+    foreground-object
+    flex-auto
+    bg-neutral-900
+    text-left
+    justify-start
 }
